@@ -227,3 +227,11 @@ Tracking/Re-ID:
 - MOTA.
 - HOTA.
 - ID switches.
+
+## 5. How does the tracking model handle heavy occlusions and overlapping bounding boxes when the store is crowded?
+
+The current implementation handles moderate crowding with YOLO person detection plus BoT-SORT tracking. BoT-SORT keeps local track continuity by associating detections across frames using motion and box overlap, so a customer can usually keep the same local ID through short partial occlusions or brief bbox overlaps.
+
+The pipeline also adds Re-ID on top of the local tracker. Each local track is mapped to a `global_id` using an OSNet body embedding, with a color-histogram fallback if OSNet is unavailable. This helps recover identity when a customer is temporarily lost and later appears again, especially when the body appearance is still visible.
+
+There are still practical limits. If a person is fully hidden for a long period, or if multiple customers with similar clothing overlap heavily, the detector/tracker can drop the track or switch IDs. In that case, downstream shelf-interaction and pickup/return assignment can also become less reliable. For production, this should be improved and validated with crowded-store data by tuning tracker thresholds, using a stronger person detector/Re-ID model, adding camera-specific calibration, and monitoring tracking metrics such as IDF1, HOTA, MOTA, and ID switches.

@@ -1,0 +1,30 @@
+shelves:
+  - id: shelf_left
+    name: Left shelf
+    polygon:
+      - [220, 70]
+      - [360, 85]
+      - [360, 340]
+      - [205, 350]
+    min_product_count: 6
+    max_empty_count: 1
+
+  - id: shelf_center
+    name: Center shelf
+    polygon:
+      - [350, 60]
+      - [520, 70]
+      - [525, 340]
+      - [360, 345]
+    min_product_count: 8
+    max_empty_count: 1
+
+  - id: shelf_right
+    name: Right shelf
+    polygon:
+      - [500, 80]
+      - [635, 95]
+      - [630, 330]
+      - [520, 340]
+    min_product_count: 6
+    max_empty_count: 1

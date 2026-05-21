@@ -1,0 +1,14 @@
+cameras:
+  camera_1:
+    exits:
+      - to: camera_2
+        max_seconds: 20
+        exit_zone: [0.70, 0.00, 1.00, 1.00]
+        entry_zone: [0.00, 0.00, 0.30, 1.00]
+
+  camera_2:
+    exits:
+      - to: camera_1
+        max_seconds: 20
+        exit_zone: [0.00, 0.00, 0.30, 1.00]
+        entry_zone: [0.70, 0.00, 1.00, 1.00]

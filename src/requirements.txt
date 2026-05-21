@@ -1,0 +1,11 @@
+torch
+torchvision
+torchreid
+gdown
+tensorboard
+ultralytics
+opencv-python
+numpy
+PyYAML
+huggingface_hub
+gradio

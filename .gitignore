@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Runtime outputs
+src/data/outputs/
+*.log
+
+# Uploaded/local videos and large media
+src/data/raw_videos/
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# Model checkpoints and downloaded weights
+src/models/**/*.pt
+src/models/**/*.pth
+src/models/**/*.onnx
+src/models/**/*.h5
+src/models/**/*.engine
+src/models/**/.cache/
+
+# Optional local configs generated during experiments
+configs/shelves_auto.yaml
+configs/shelves_yoloworld.yaml
